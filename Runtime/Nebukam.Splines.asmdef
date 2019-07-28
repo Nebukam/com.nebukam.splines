@@ -1,0 +1,19 @@
+{
+    "name": "Nebukam.Splines",
+    "references": [
+        "Unity.Mathematics",
+        "Unity.Collections",
+        "Nebukam.Utils",
+        "Nebukam.JobAssist",
+		"Nebukam.Geom"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}
