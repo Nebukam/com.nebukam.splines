@@ -3,11 +3,11 @@
     "references": [
         "Unity.Mathematics",
         "Unity.Collections",
+        "Nebukam.Common",
         "Nebukam.Utils",
         "Nebukam.JobAssist",
-		"Nebukam.Geom"
+        "Nebukam.Geom"
     ],
-    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": true,
