@@ -144,11 +144,6 @@ namespace Nebukam.Splines
 
         #endregion
 
-        public void Clear()
-        {
-            m_vertices.Clear();
-        }
-
     }
 
 }
