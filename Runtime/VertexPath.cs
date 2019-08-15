@@ -4,7 +4,6 @@ using UnityEngine;
 using Unity.Mathematics;
 using static Unity.Mathematics.math;
 using Nebukam.Geom;
-using Nebukam.Common;
 
 
 namespace Nebukam.Splines
