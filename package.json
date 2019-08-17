@@ -16,9 +16,9 @@
     "url": "https://github.com/Nebukam/com.nebukam.geom.git"
   },
   "dependencies": {
-  "com.unity.collections": "0.0.9",
+	"com.unity.collections": "0.0.9",
     "com.unity.mathematics": "1.1.0",
-	"com.nebukam.utils": "https://github.com/Nebukam/com.nebukam.utils.git",
+	"com.nebukam.common": "https://github.com/Nebukam/com.nebukam.common.git",
     "com.nebukam.job-assist": "https://github.com/Nebukam/com.nebukam.job-assist.git",
 	"com.nebukam.geom": "https://github.com/Nebukam/com.nebukam.geom.git"
   }

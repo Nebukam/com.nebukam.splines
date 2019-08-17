@@ -1,10 +1,9 @@
 {
     "name": "Nebukam.Splines",
     "references": [
-        "Unity.Mathematics",
         "Unity.Collections",
+        "Unity.Mathematics",
         "Nebukam.Common",
-        "Nebukam.Utils",
         "Nebukam.JobAssist",
         "Nebukam.Geom"
     ],
