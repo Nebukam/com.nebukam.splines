@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using Unity.Mathematics;
 using UnityEngine;
-using Unity.Mathematics;
 using static Unity.Mathematics.math;
-using Nebukam.Geom;
 
 
 namespace Nebukam.Splines
 {
-    
+
     /// <summary>
     /// Managed path allow tight point management as well as custom Point types, and as such may be used for tool authoring
     /// while still retaining path-related functionalities.
@@ -16,7 +13,7 @@ namespace Nebukam.Splines
     public abstract class VertexPath<V> : VertexGroup<V>
         where V : Vertex, IVertex, new()
     {
-        
+
         public bool loop { get; set; } = true;
 
         #region Catmull-Rom Spline
@@ -34,10 +31,10 @@ namespace Nebukam.Splines
         public float3 CRInterp(float t)
         {
             int numSections = m_vertices.Count - 3;
-            int currPt = Mathf.Min(Mathf.FloorToInt(t * (float)numSections), numSections - 1);
-            float u = t * (float)numSections - (float)currPt, uu = u*u, uuu = uu * u;
+            int currPt = Mathf.Min(Mathf.FloorToInt(t * numSections), numSections - 1);
+            float u = t * numSections - currPt, uu = u * u, uuu = uu * u;
 
-            float3 a = m_vertices[currPt].pos, 
+            float3 a = m_vertices[currPt].pos,
                 b = m_vertices[currPt + 1].pos,
                 c = m_vertices[currPt + 2].pos,
                 d = m_vertices[currPt + 3].pos;
@@ -63,7 +60,7 @@ namespace Nebukam.Splines
 
             float u = t, uu = u * u, uuu = uu * u;
 
-            float3 a = m_vertices[from-1].pos,
+            float3 a = m_vertices[from - 1].pos,
                 b = m_vertices[from].pos,
                 c = m_vertices[from + 1].pos,
                 d = m_vertices[from + 2].pos;
@@ -90,8 +87,8 @@ namespace Nebukam.Splines
         public float3 CRVelocity(float t)
         {
             int numSections = m_vertices.Count - 3;
-            int currPt = Mathf.Min(Mathf.FloorToInt(t * (float)numSections), numSections - 1);
-            float u = t * (float)numSections - (float)currPt, uu = u * u;
+            int currPt = Mathf.Min(Mathf.FloorToInt(t * numSections), numSections - 1);
+            float u = t * numSections - currPt, uu = u * u;
 
             float3 a = m_vertices[currPt].pos,
                 b = m_vertices[currPt + 1].pos,
@@ -105,7 +102,7 @@ namespace Nebukam.Splines
                 1.5f * (-ay + 3f * by - 3f * cy + dy) * uu + (2f * ay - 5f * by + 4f * cy - d.y) * u + .5f * cy - .5f * ay,
                 1.5f * (-az + 3f * bz - 3f * cz + dz) * uu + (2f * az - 5f * bz + 4f * cz - d.z) * u + .5f * cz - .5f * az
                 );
-            
+
         }
 
         /// <summary>

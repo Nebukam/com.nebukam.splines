@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Nebukam.Geom;
 using Unity.Mathematics;
+using UnityEngine;
 using static Unity.Mathematics.math;
 
 namespace Nebukam.Splines
@@ -15,14 +13,14 @@ namespace Nebukam.Splines
     {
 
         protected List<float3> m_vertices = new List<float3>();
-        
+
         public int Count { get { return m_vertices.Count; } }
 
         public bool loop { get; set; } = true;
 
         public float3 this[int index] { get { return m_vertices[index]; } }
         public int this[float3 v] { get { return m_vertices.IndexOf(v); } }
-        
+
         /// <summary>
         /// Create a vertex in the path, from a float3.
         /// </summary>
@@ -98,7 +96,7 @@ namespace Nebukam.Splines
         public float3 GetNearestPoint(float3 v)
         {
             int index = GetNearestPointIndex(v);
-            if (index == -1) { return float3(false); }
+            if (index == -1) { return float3(0f); }
             return m_vertices[index];
         }
 
@@ -119,8 +117,8 @@ namespace Nebukam.Splines
         public float3 CRInterp(float t)
         {
             int numSections = m_vertices.Count - 3;
-            int currPt = Mathf.Min(Mathf.FloorToInt(t * (float)numSections), numSections - 1);
-            float u = t * (float)numSections - (float)currPt, uu = u * u, uuu = uu * u;
+            int currPt = Mathf.Min(Mathf.FloorToInt(t * numSections), numSections - 1);
+            float u = t * numSections - currPt, uu = u * u, uuu = uu * u;
 
             float3 a = m_vertices[currPt],
                 b = m_vertices[currPt + 1],
@@ -175,8 +173,8 @@ namespace Nebukam.Splines
         public float3 CRVelocity(float t)
         {
             int numSections = m_vertices.Count - 3;
-            int currPt = Mathf.Min(Mathf.FloorToInt(t * (float)numSections), numSections - 1);
-            float u = t * (float)numSections - (float)currPt, uu = u * u;
+            int currPt = Mathf.Min(Mathf.FloorToInt(t * numSections), numSections - 1);
+            float u = t * numSections - currPt, uu = u * u;
 
             float3 a = m_vertices[currPt],
                 b = m_vertices[currPt + 1],
