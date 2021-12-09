@@ -1,7 +1,7 @@
 ﻿using Unity.Mathematics;
 using UnityEngine;
 using static Unity.Mathematics.math;
-
+using Nebukam.Common;
 
 namespace Nebukam.Splines
 {
