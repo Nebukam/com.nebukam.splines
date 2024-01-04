@@ -1,10 +1,10 @@
 {
   "name": "com.nebukam.splines",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "displayName": "N:Splines",
   "description": "Various splines & path utils",
-  "unity": "2019.4",
-  "unityRelease": "17f1",
+  "unity": "2022.1",
+  "unityRelease": "0f1",
   "documentationUrl":"https://nebukam.github.io/docs/unity/com.nebukam.splines/",
   "keywords": [
     "Geometry",
@@ -21,8 +21,8 @@
     "com.unity.mathematics": "1.2.1"
   },
   "gitDependencies": {
-    "com.nebukam.common": "https://github.com/Nebukam/com.nebukam.common.git#0.1.5",
-    "com.nebukam.job-assist": "https://github.com/Nebukam/com.nebukam.job-assist.git#1.1.4",
+    "com.nebukam.common": "https://github.com/Nebukam/com.nebukam.common.git#0.1.6",
+    "com.nebukam.job-assist": "https://github.com/Nebukam/com.nebukam.job-assist.git#1.1.5",
     "com.nebukam.geom": "https://github.com/Nebukam/com.nebukam.geom.git#0.0.5"
   }
 }
